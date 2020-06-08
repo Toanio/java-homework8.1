@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class ConditionerTest {
 
 
-    @Test
+
     public void shouldConditionerCreateTest()
     {
         Conditioner conditioner=new Conditioner();
