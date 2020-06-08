@@ -37,12 +37,12 @@ public class Conditioner {
     }
 
     public void setCurrentTemperature(int currentTemperature) {
-        if(currentTemperature>maxTemperature){
+        if (currentTemperature > maxTemperature) {
             System.out.println("Превышен предел максимальной температуры");
             setCurrentTemperature(getMaxTemperature());
             return;
         }
-        if (currentTemperature<minTemperature){
+        if (currentTemperature < minTemperature) {
             System.out.println("Вышли за пределы минимальной температуры");
             setCurrentTemperature(getMinTemperature());
             return;
@@ -58,25 +58,22 @@ public class Conditioner {
         this.on = on;
     }
 
-    public void increaseCurrentTemperature()
-    {
-        int addDegree=currentTemperature+1;
-        if (addDegree>getMaxTemperature())
-        {
-            addDegree=getMaxTemperature();
+    public void increaseCurrentTemperature() {
+        currentTemperature++;
+        if (currentTemperature > maxTemperature) {
+            currentTemperature = maxTemperature;
             return;
         }
-        setCurrentTemperature(addDegree);
+
 
     }
-    public void decreaseCurrentTemperature()
-    {
-        int minusDegree=currentTemperature-1;
-        if (minusDegree<minTemperature)
-        {
+
+    public void decreaseCurrentTemperature() {
+        currentTemperature--;
+        if (currentTemperature < minTemperature) {
+            currentTemperature = minTemperature;
             return;
         }
-        setCurrentTemperature(minusDegree);
     }
 
 }
